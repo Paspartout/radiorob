@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/Minimal.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/DialogBox.gd" type="Script" id=3]
+[ext_resource path="res://sfx/tick.wav" type="AudioStream" id=4]
+[ext_resource path="res://scripts/TickPlayer.gd" type="Script" id=5]
+
+
+
+[node name="ScrollingText" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -116.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 256.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 1 )
+text = "Hello We have to do this?
+This is the second line..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="TickPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+script = ExtResource( 5 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/geiger_tick.wav-6622b1b6f2be4f4767170f0ae05275ad.sample"
+
+[deps]
+
+source_file="res://sfx/geiger_tick.wav"
+dest_files=[ "res://.import/geiger_tick.wav-6622b1b6f2be4f4767170f0ae05275ad.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

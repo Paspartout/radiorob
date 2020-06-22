@@ -1,0 +1,255 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://gfx/dialog_9patch.png" type="Texture" id=1]
+[ext_resource path="res://scripts/HUD.gd" type="Script" id=2]
+[ext_resource path="res://gfx/battery_bar_bg.png" type="Texture" id=3]
+[ext_resource path="res://gfx/battery_bar_fill.png" type="Texture" id=4]
+[ext_resource path="res://scenes/ScrollingText.tscn" type="PackedScene" id=5]
+[ext_resource path="res://fonts/Minimal.tres" type="DynamicFont" id=6]
+[ext_resource path="res://gfx/rad_bar_bg.png" type="Texture" id=7]
+[ext_resource path="res://gfx/tileset.png" type="Texture" id=8]
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 8 )
+region = Rect2( 144, 128, 16, 16 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "Collapse"
+length = 0.4
+tracks/0/type = "method"
+tracks/0/path = NodePath("ScrollingText")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ScrollingText:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TopBar/Stats:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TopBar:margin_top")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 130, 160.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.4
+tracks/0/type = "method"
+tracks/0/path = NodePath("ScrollingText")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ScrollingText:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TopBar/Stats:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TopBar:margin_top")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 159.0, 130.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Idle"
+length = 0.1
+tracks/0/type = "method"
+tracks/0/path = NodePath("ScrollingText")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ScrollingText:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TopBar/Stats:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TopBar:margin_top")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 160.0 ]
+}
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="TopBar" type="NinePatchRect" parent="."]
+margin_top = 160.0
+margin_right = 320.0
+margin_bottom = 180.0
+texture = ExtResource( 1 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stats" type="Node2D" parent="TopBar"]
+skew = 4.37114e-08
+
+[node name="HealthBar" type="TextureProgress" parent="TopBar/Stats"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 34.0
+margin_bottom = 18.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RadBar" type="TextureProgress" parent="TopBar/Stats"]
+margin_left = 248.0
+margin_top = 2.0
+margin_right = 280.0
+margin_bottom = 18.0
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TopBar/Stats"]
+margin_left = 35.0
+margin_top = 3.0
+margin_right = 59.0
+margin_bottom = 23.0
+rect_pivot_offset = Vector2( 16, 8 )
+custom_fonts/font = ExtResource( 6 )
+text = "HP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="TopBar/Stats"]
+margin_left = 280.0
+margin_top = 3.0
+margin_right = 316.0
+margin_bottom = 23.0
+rect_pivot_offset = Vector2( 16, 8 )
+custom_fonts/font = ExtResource( 6 )
+text = "RAD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="TopBar/Stats"]
+position = Vector2( 240, 9 )
+scale = Vector2( 1, 1.03125 )
+texture = SubResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Collapse = SubResource( 1 )
+anims/Expand = SubResource( 2 )
+anims/Idle = SubResource( 3 )
+
+[node name="ScrollingText" parent="." instance=ExtResource( 5 )]
+visible = false
+margin_left = 4.0
+margin_top = 134.0
+margin_right = 4.0
+margin_bottom = -3.0
+
+[node name="TextTimeout" type="Timer" parent="."]
+one_shot = true
+[connection signal="scrolling_stopped" from="ScrollingText" to="." method="_on_ScrollingText_scrolling_stopped"]

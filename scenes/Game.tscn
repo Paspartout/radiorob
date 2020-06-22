@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/World.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scripts/Pauser.gd" type="Script" id=9]
+[ext_resource path="res://scripts/TextPlayer.gd" type="Script" id=10]
+[ext_resource path="res://shader/colormap.tres" type="Material" id=11]
+[ext_resource path="res://gfx/white.png" type="Texture" id=12]
+
+[node name="Game" type="Node"]
+
+[node name="World" parent="." instance=ExtResource( 1 )]
+
+[node name="HUD" parent="." instance=ExtResource( 7 )]
+
+[node name="DebugKeys" type="Node" parent="."]
+pause_mode = 2
+script = ExtResource( 9 )
+
+[node name="TextPlayer" type="Node" parent="."]
+script = ExtResource( 10 )
+
+[node name="PostProcessing" type="CanvasLayer" parent="."]
+
+[node name="Sprite" type="Sprite" parent="PostProcessing"]
+material = ExtResource( 11 )
+position = Vector2( 160, 88 )
+scale = Vector2( 5, 2.875 )
+texture = ExtResource( 12 )
