@@ -32,6 +32,8 @@ func _open_door(door: String):
 	success_sound.play()
 	timer.disconnect("timeout", self, "_open_door")
 
+func start_trigger():
+	hud.show_text("Welcome robot!\nUse arrow keys to move.")
 
 func jump_help():
 	hud.show_text("We equipped you with springs.\nPress C to jump.")
@@ -179,3 +181,4 @@ func _on_Player_died():
 
 func restart():
 	get_tree().reload_current_scene()
+

@@ -74,7 +74,6 @@ func _physics_process(delta):
 	handle_actions(input_y)
 
 	# GRAVITY
-
 	velocity.y += GRAVITY * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
 	

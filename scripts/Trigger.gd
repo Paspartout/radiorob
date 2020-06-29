@@ -8,3 +8,4 @@ func _ready():
 func _trigger(body):
 	emit_signal("triggered")
 	queue_free()
+	

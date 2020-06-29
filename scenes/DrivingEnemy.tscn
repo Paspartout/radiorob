@@ -128,12 +128,16 @@ tracks/0/keys = {
 [node name="DrivingEnemy" type="KinematicBody2D" groups=[
 "living",
 ]]
+position = Vector2( -1, 0 )
 collision_layer = 2147483652
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-skew = 4.37114e-08
 frames = SubResource( 3 )
+frame = 1
 playing = true
 
 [node name="Hurtbox" type="Area2D" parent="."]
@@ -142,11 +146,9 @@ collision_mask = 16
 
 [node name="HurtBox" type="CollisionShape2D" parent="Hurtbox"]
 visible = false
-skew = 4.37114e-08
 shape = SubResource( 4 )
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
-skew = 4.37114e-08
 shape = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -154,10 +156,7 @@ anims/Die = SubResource( 5 )
 anims/Hurt = SubResource( 6 )
 anims/Idle = SubResource( 7 )
 
-[node name="Timer" type="Timer" parent="."]
-
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 [connection signal="area_entered" from="Hurtbox" to="." method="attack"]
 [connection signal="body_entered" from="Hurtbox" to="." method="attack"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

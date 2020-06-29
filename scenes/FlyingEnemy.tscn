@@ -184,7 +184,6 @@ extents = Vector2( 168, 80 )
 [node name="FlyingEnemy" type="KinematicBody2D" groups=[
 "living",
 ]]
-skew = 4.37114e-08
 collision_layer = 4
 collision_mask = 0
 script = ExtResource( 1 )
@@ -194,23 +193,20 @@ __meta__ = {
 Bullet = ExtResource( 5 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-skew = 4.37114e-08
 frames = SubResource( 3 )
+frame = 1
 playing = true
 
 [node name="Hitbox" type="Area2D" parent="."]
-skew = 4.37114e-08
 collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 0, 1 )
-skew = 4.37114e-08
 shape = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1 )
-skew = 4.37114e-08
 shape = SubResource( 4 )
 
 [node name="WanderTimer" type="Timer" parent="."]
